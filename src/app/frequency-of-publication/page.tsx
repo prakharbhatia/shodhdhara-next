@@ -166,7 +166,7 @@ export default function FrequencyOfPublication() {
                     <span className="w-6 h-6 bg-gold/20 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
                       <span className="text-gold text-sm font-bold">{index + 1}</span>
                     </span>
-                    <span className="text-slate-light">{step}</span>
+                    <span className="text-black">{step}</span>
                   </li>
                 ))}
               </ul>

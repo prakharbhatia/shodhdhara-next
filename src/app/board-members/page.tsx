@@ -163,7 +163,7 @@ export default function BoardMembers() {
               <h3 className="text-2xl font-bold mb-2">Chief Editor</h3>
               <div className="w-16 h-1 bg-gold rounded-full mb-4" />
               <p className="text-xl font-semibold">Dr. (Smt.) Neelam Mukesh</p>
-              <p className="text-slate-light mt-2 hindi">
+              <p className="text-black mt-2 hindi">
                 मुख्य संपादक
               </p>
             </div>
