@@ -42,6 +42,7 @@ next-env.d.ts
 
 # secrets
 .github_token
+.vercel_token
 
 # Large PDF files
 public/files/65-final.pdf

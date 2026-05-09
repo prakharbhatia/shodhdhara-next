@@ -75,7 +75,7 @@ export default function FrequencyOfPublication() {
             </h2>
             <div className="w-20 h-1 bg-gold rounded-full mb-8" />
 
-            <div className="space-y-6 text-primary-light leading-relaxed">
+            <div className="space-y-6 text-primary-dark leading-relaxed">
               <p>
                 <strong className="text-primary">Shodh Dhara</strong> is a quarterly
                 research journal published four times a year. Researchers and scholars
@@ -126,19 +126,19 @@ export default function FrequencyOfPublication() {
                     >
                       <td className="px-6 py-5">
                         <span className="font-semibold text-primary">{item.quarter}</span>
-                        <span className="block text-slate hindi">{item.hi}</span>
+                        <span className="block text-primary-dark hindi">{item.hi}</span>
                       </td>
                       <td className="px-6 py-5">
                         <span className="font-semibold text-primary">{item.issue}</span>
-                        <span className="block text-slate hindi">{item.hiIssue}</span>
+                        <span className="block text-primary-dark hindi">{item.hiIssue}</span>
                       </td>
                       <td className="px-6 py-5">
                         <span className="font-semibold text-primary">{item.submissionDeadline}</span>
-                        <span className="block text-slate hindi">{item.hiDeadline}</span>
+                        <span className="block text-primary-dark hindi">{item.hiDeadline}</span>
                       </td>
                       <td className="px-6 py-5">
                         <span className="font-semibold text-primary">{item.publication}</span>
-                        <span className="block text-slate hindi">{item.hiPublication}</span>
+                        <span className="block text-primary-dark hindi">{item.hiPublication}</span>
                       </td>
                     </tr>
                   ))}
@@ -189,7 +189,7 @@ export default function FrequencyOfPublication() {
                     <span className="w-6 h-6 bg-primary/10 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
                       <span className="text-primary text-sm font-bold">{index + 1}</span>
                     </span>
-                    <span className="text-slate-dark">{step}</span>
+                    <span className="text-primary-dark">{step}</span>
                   </li>
                 ))}
               </ul>

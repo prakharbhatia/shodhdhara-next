@@ -32,7 +32,7 @@ export default function AboutResearchJournals() {
             </h2>
             <div className="w-20 h-1 bg-gold rounded-full mb-8" />
 
-            <div className="space-y-6 text-primary-light leading-relaxed">
+            <div className="space-y-6 text-primary-dark leading-relaxed">
               <p>
                 <strong className="text-primary">Research journals</strong> play a vital
                 role in the dissemination of knowledge and the advancement of academic
@@ -161,7 +161,7 @@ export default function AboutResearchJournals() {
                   </div>
                   <div>
                     <p className="font-semibold">{item.en}</p>
-                    <p className="hindi text-slate-light">{item.hi}</p>
+                    <p className="hindi text-primary-dark">{item.hi}</p>
                   </div>
                 </div>
               ))}

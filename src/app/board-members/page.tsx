@@ -68,7 +68,7 @@ function BoardSection({
             <span className="w-8 h-8 bg-primary rounded-lg flex items-center justify-center flex-shrink-0 text-gold font-bold text-sm mt-0.5">
               {index + 1}
             </span>
-            <span className="text-primary-light leading-relaxed pt-1">
+            <span className="text-primary-dark leading-relaxed pt-1">
               {member}
             </span>
           </li>
@@ -174,7 +174,7 @@ export default function BoardMembers() {
               <p className="text-xl font-semibold text-primary">
                 Dr. Rajesh Chandra Pandey
               </p>
-              <p className="text-slate mt-2 hindi">संपादक</p>
+              <p className="text-primary-dark mt-2 hindi">संपादक</p>
             </div>
           </div>
         </div>
