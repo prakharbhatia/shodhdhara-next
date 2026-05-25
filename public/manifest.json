@@ -1,0 +1,21 @@
+{
+  "$schema": "https://json.schemastore.org/web-manifest.json",
+  "name": "Shodh Dhara - Quarterly Peer Reviewed Research Journal",
+  "short_name": "Shodh Dhara",
+  "description": "UGC Care Listed Research Journal ISSN 0975-3664. A Quarterly Peer Reviewed, Referred, Bi-Lingual (Hindi & English) Research Journal of Arts & Humanities.",
+  "icons": [
+    {
+      "src": "/favicon.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    }
+  ],
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#FBF7ED",
+  "theme_color": "#783B0A",
+  "lang": "en-IN",
+  "orientation": "any",
+  "categories": ["education", "magazines"]
+}
