@@ -8,6 +8,7 @@ export interface Issue {
 
 // PDFs hosted locally use /files/ paths.
 // PDFs on Google Drive use share links.
+// Small change to trigger redeployment.
 export const issues: Issue[] = [
   {
     number: 71,
