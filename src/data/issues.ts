@@ -10,8 +10,14 @@ export interface Issue {
 // PDFs on Google Drive use share links.
 export const issues: Issue[] = [
   {
+    number: 71,
+    pdfUrl: "https://drive.google.com/file/d/1Bf7L0ITpJ1Wtfr7uQjiOWA0uOBtPjv8c/view?usp=sharing",
+    coverUrl: "/covers/71-cover.webp",
+    year: "2024",
+  },
+  {
     number: 70,
-    pdfUrl: "https://drive.google.com/file/d/1yIpbknMipgszyTx_4_cTtmcy3f93dSIg/view?usp=sharing",
+    pdfUrl: "https://drive.google.com/file/d/1sUBF4tkAYFNqlzI4fJLBgtssBdwwJuTe/view?usp=sharing",
     coverUrl: "/covers/70-cover.webp",
     year: "2023",
   },
