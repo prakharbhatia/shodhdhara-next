@@ -12,7 +12,7 @@ export interface Issue {
 export const issues: Issue[] = [
   {
     number: 72,
-    pdfUrl: "https://drive.google.com/file/d/1Qj1bbFyZCITYuMxDSK7wwTsfM5Ub_Ta3/view?usp=drive_link",
+    pdfUrl: "https://drive.google.com/file/d/1Qj1bbFyZCITYuMxDSK7wwTsfM5Ub_Ta3/view?usp=sharing",
     coverUrl: "/covers/72-cover.webp",
     year: "2024",
   },
