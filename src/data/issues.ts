@@ -11,6 +11,12 @@ export interface Issue {
 // Small change to trigger redeployment.
 export const issues: Issue[] = [
   {
+    number: 73,
+    pdfUrl: "https://drive.google.com/file/d/1EysZ9idbdbysgjQ6omVep5ZLbfs_ioP9/view?usp=sharing",
+    coverUrl: "/covers/73-cover.webp",
+    year: "2024",
+  },
+  {
     number: 72,
     pdfUrl: "https://drive.google.com/file/d/1Qj1bbFyZCITYuMxDSK7wwTsfM5Ub_Ta3/view?usp=sharing",
     coverUrl: "/covers/72-cover.webp",
