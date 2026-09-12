@@ -14,7 +14,7 @@ export const issues: Issue[] = [
     number: 74,
     pdfUrl: "https://drive.google.com/file/d/1UFqjmBfvgibcvd3eOmCiv1vYjMaNizSS/view?usp=sharing",
     coverUrl: "/covers/74-cover.webp",
-    year: "2025",
+    year: "2024",
   },
   {
     number: 73,
