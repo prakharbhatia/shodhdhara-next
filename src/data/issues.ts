@@ -10,15 +10,15 @@ export interface Issue {
 // PDFs on Google Drive use share links.
 // Small change to trigger redeployment.
 export const issues: Issue[] = [
-  // {
-  //   number: 74,
-  //   pdfUrl: "https://drive.google.com/file/d/1o2VUe6qxR0vJDuWIuWahy4Zp1ORC1w_-/view?usp=sharing",
-  //   coverUrl: "/covers/74-cover.webp",
-  //   year: "2024",
-  // },
+  {
+    number: 74,
+    pdfUrl: "https://drive.google.com/file/d/1UFqjmBfvgibcvd3eOmCiv1vYjMaNizSS/view?usp=sharing",
+    coverUrl: "/covers/74-cover.webp",
+    year: "2025",
+  },
   {
     number: 73,
-    pdfUrl: "https://drive.google.com/file/d/1EysZ9idbdbysgjQ6omVep5ZLbfs_ioP9/view?usp=sharing",
+    pdfUrl: "https://drive.google.com/file/d/1tt9Wi8vcYQ4En4JhgcWw8tU8wKHbhqGX/view?usp=sharing",
     coverUrl: "/covers/73-cover.webp",
     year: "2024",
   },
