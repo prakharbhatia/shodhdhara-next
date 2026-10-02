@@ -11,25 +11,19 @@ function ErrorPopup({
   onClose: () => void;
 }) {
   return (
-    /* Backdrop */
     <div
       className="fixed inset-0 z-50 flex items-center justify-center p-4"
       style={{ backgroundColor: "rgba(0,0,0,0.45)" }}
       onClick={onClose}
     >
-      {/* Modal */}
       <div
         className="relative bg-white rounded-2xl shadow-2xl max-w-sm w-full p-8 text-center"
         onClick={(e) => e.stopPropagation()}
       >
-        {/* Icon */}
+        {/* Red error icon */}
         <div
           className="mx-auto mb-4 flex items-center justify-center rounded-full"
-          style={{
-            width: 64,
-            height: 64,
-            backgroundColor: "#FFF4E5",
-          }}
+          style={{ width: 64, height: 64, backgroundColor: "#FEE2E2" }}
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -37,7 +31,7 @@ function ErrorPopup({
             height={32}
             fill="none"
             viewBox="0 0 24 24"
-            stroke="#E6820E"
+            stroke="#DC2626"
             strokeWidth={1.8}
           >
             <path
@@ -48,19 +42,20 @@ function ErrorPopup({
           </svg>
         </div>
 
-        <h3 className="text-xl font-bold text-primary mb-2">
-          Issue #{issueNumber} — Coming Soon
+        <h3 className="text-xl font-bold text-red-600 mb-2">
+          Error Downloading PDF
         </h3>
+        <p className="text-slate text-sm leading-relaxed mb-1">
+          Issue #{issueNumber} could not be fetched.
+        </p>
         <p className="text-slate text-sm leading-relaxed mb-6">
-          The PDF for this issue is not available yet. The cover has been
-          published, but the full issue file will be uploaded shortly. Please
-          check back soon.
+          The file may not be available yet. Please try again later or contact us if the issue persists.
         </p>
         <button
           onClick={onClose}
           className="inline-flex items-center justify-center w-full bg-primary text-white px-4 py-3 rounded-lg font-medium hover:bg-primary-light transition-colors"
         >
-          Got it
+          Close
         </button>
       </div>
     </div>
@@ -168,7 +163,7 @@ export function IssueCard({ issue }: { issue: Issue }) {
           ) : (
             <button
               onClick={handleNoPdfClick}
-              className="inline-flex items-center justify-center w-full gap-2 bg-amber-50 text-amber-700 border border-amber-200 px-4 py-3 rounded-lg font-medium hover:bg-amber-100 transition-colors cursor-pointer"
+              className="inline-flex items-center justify-center w-full gap-2 bg-primary text-white px-4 py-3 rounded-lg font-medium hover:bg-primary-light transition-colors cursor-pointer"
             >
               <svg
                 className="w-5 h-5"
@@ -180,10 +175,10 @@ export function IssueCard({ issue }: { issue: Issue }) {
                   strokeLinecap="round"
                   strokeLinejoin="round"
                   strokeWidth={2}
-                  d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
+                  d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"
                 />
               </svg>
-              PDF Coming Soon
+              Download PDF
             </button>
           )}
         </div>
