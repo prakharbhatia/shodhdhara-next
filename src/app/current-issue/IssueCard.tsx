@@ -49,7 +49,7 @@ function ErrorPopup({
           Issue #{issueNumber} could not be fetched.
         </p>
         <p className="text-slate text-sm leading-relaxed mb-6">
-          The file may not be available yet. Please try again later or contact us if the issue persists.
+          Please try again later or contact us if the issue persists.
         </p>
         <button
           onClick={onClose}
