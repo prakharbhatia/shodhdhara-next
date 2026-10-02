@@ -4,6 +4,7 @@ import Link from "next/link";
 import Script from "next/script";
 import BrandGradientSection from "@/components/BrandGradientSection";
 import { issues } from "@/data/issues";
+import { IssueCard } from "@/app/current-issue/IssueCard";
 
 export const metadata: Metadata = {
   title: {
@@ -302,15 +303,7 @@ export default function Home() {
                         Download PDF
                       </a>
                     ) : (
-                      <button
-                        disabled
-                        className="inline-flex items-center justify-center w-full gap-2 bg-gray-300 text-gray-500 px-4 py-3 rounded-lg font-medium cursor-not-allowed"
-                      >
-                        <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
-                        </svg>
-                        PDF Coming Soon
-                      </button>
+                      <IssueCard issue={issue} buttonOnly />
                     )}
                   </div>
                 </div>

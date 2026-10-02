@@ -62,7 +62,13 @@ function ErrorPopup({
   );
 }
 
-export function IssueCard({ issue }: { issue: Issue }) {
+export function IssueCard({
+  issue,
+  buttonOnly = false,
+}: {
+  issue: Issue;
+  buttonOnly?: boolean;
+}) {
   const hasPdf = issue.pdfUrl && issue.pdfUrl.trim().length > 0;
   const [showError, setShowError] = useState(false);
 
@@ -73,6 +79,25 @@ export function IssueCard({ issue }: { issue: Issue }) {
   const issueLabel = issue.notes?.startsWith("Combined issue")
     ? issue.notes.replace("Combined issue ", "")
     : `#${issue.number}`;
+
+  const downloadButton = hasPdf ? null : (
+    <>
+      {showError && (
+        <ErrorPopup issueNumber={issue.number} onClose={handleClose} />
+      )}
+      <button
+        onClick={handleNoPdfClick}
+        className="inline-flex items-center justify-center w-full gap-2 bg-primary text-white px-4 py-3 rounded-lg font-medium hover:bg-primary-light transition-colors cursor-pointer"
+      >
+        <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
+        </svg>
+        Download PDF
+      </button>
+    </>
+  );
+
+  if (buttonOnly) return downloadButton;
 
   return (
     <>
