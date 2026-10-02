@@ -70,9 +70,9 @@ export const metadata: Metadata = {
       "UGC Care Listed Research Journal ISSN 0975-3664. A Quarterly Peer Reviewed, Referred, Bi-Lingual Research Journal of Arts & Humanities since 2005.",
     images: [
       {
-        url: "https://shodhdhara.com/logo.png",
-        width: 512,
-        height: 512,
+        url: "https://shodhdhara.com/og-image.png",
+        width: 1200,
+        height: 630,
         alt: "Shodh Dhara - Quarterly Peer Reviewed Research Journal",
       },
     ],
@@ -84,7 +84,7 @@ export const metadata: Metadata = {
     title: "Shodh Dhara - Quarterly Peer Reviewed Research Journal",
     description:
       "UGC Care Listed Research Journal ISSN 0975-3664. Arts & Humanities since 2005.",
-    images: ["https://shodhdhara.com/logo.png"],
+    images: ["https://shodhdhara.com/og-image.png"],
   },
   robots: {
     index: true,
@@ -298,7 +298,7 @@ export default function RootLayout({
         <meta name="generator" content="Next.js" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
           <meta name="theme-color" content="#1E3A8A" />
-        <link rel="icon" href="/favicon.png" type="image/png" />
+        <link rel="icon" href="/favicon.png" type="image/png" sizes="512x512" />
         <link rel="apple-touch-icon" sizes="180x180" href="/favicon.png" />
         <link rel="manifest" href="/manifest.json" />
         {/* Preload critical fonts */}

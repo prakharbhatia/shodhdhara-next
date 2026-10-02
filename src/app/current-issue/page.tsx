@@ -18,9 +18,9 @@ export const metadata: Metadata = {
       "Browse all issues of Shodh Dhara Research Journal. Access peer-reviewed research papers in Arts & Humanities. ISSN: 0975-3664.",
     images: [
       {
-        url: "https://shodhdhara.com/logo.png",
-        width: 512,
-        height: 512,
+        url: "https://shodhdhara.com/og-image.png",
+        width: 1200,
+        height: 630,
         alt: "Shodh Dhara - Current Issues",
       },
     ],
@@ -30,7 +30,7 @@ export const metadata: Metadata = {
     title: "Current Issues — Shodh Dhara Research Journal",
     description:
       "Browse all issues of Shodh Dhara Research Journal. ISSN: 0975-3664.",
-    images: ["https://shodhdhara.com/logo.png"],
+    images: ["https://shodhdhara.com/og-image.png"],
   },
 };
 
