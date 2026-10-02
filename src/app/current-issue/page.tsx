@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
-import { issues, type Issue } from "@/data/issues";
+import { issues } from "@/data/issues";
+import { IssueCard } from "./IssueCard";
 
 export const metadata: Metadata = {
   title: {
@@ -33,93 +34,19 @@ export const metadata: Metadata = {
   },
 };
 
-function IssueCard({ issue }: { issue: Issue }) {
-  const hasPdf = issue.pdfUrl && issue.pdfUrl.trim().length > 0;
-
-  return (
-    <div className="bg-white rounded-2xl shadow-sm border border-gray-100 overflow-hidden hover:shadow-md transition-shadow">
-      <div className="aspect-[3/4] bg-cream relative flex items-center justify-center overflow-hidden">
-        {issue.coverUrl ? (
-          hasPdf ? (
-            <a
-              href={issue.pdfUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="w-full h-full"
-            >
-              <img
-                src={issue.coverUrl}
-                alt={`Issue #${issue.number} Cover`}
-                className="w-full h-full object-cover hover:opacity-90 transition-opacity cursor-pointer"
-                loading="lazy"
-              />
-            </a>
-          ) : (
-            <img
-              src={issue.coverUrl}
-              alt={`Issue #${issue.number} Cover`}
-              className="w-full h-full object-cover"
-              loading="lazy"
-            />
-          )
-        ) : (
-          <div className="text-center p-6">
-            <div className="w-24 h-24 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
-              <span className="text-3xl font-bold text-primary">
-                {issue.number}
-              </span>
-            </div>
-            <span className="text-sm text-slate">Issue #{issue.number}</span>
-            {issue.year && (
-              <span className="block text-xs text-slate-light mt-1">
-                {issue.year}
-              </span>
-            )}
-          </div>
-        )}
-      </div>
-
-      <div className="p-6">
-        <p className="text-xl font-bold text-primary mb-2">
-          Issue #{issue.number}
-          {issue.year && (
-            <span className="text-base font-normal text-slate ml-2">
-              ({issue.year})
-            </span>
-          )}
-        </p>
-        <p className="text-slate mb-4 hindi">
-          शोध धारा अंक {issue.number}
-        </p>
-        {hasPdf ? (
-          <a
-            href={issue.pdfUrl}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center justify-center w-full gap-2 bg-primary text-white px-4 py-3 rounded-lg font-medium hover:bg-primary-light transition-colors"
-          >
-            <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
-            </svg>
-            Download PDF
-          </a>
-        ) : (
-          <button
-            disabled
-            className="inline-flex items-center justify-center w-full gap-2 bg-gray-300 text-gray-500 px-4 py-3 rounded-lg font-medium cursor-not-allowed"
-          >
-            <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m4 4V4" />
-            </svg>
-            PDF Coming Soon
-          </button>
-        )}
-      </div>
-    </div>
-  );
-}
-
 export default function LatestIssues() {
+  // Deduplicate combined issues (e.g. 78/79 share the same notes + coverUrl)
+  const seenCoverNotes = new Set<string>();
+  const dedupedIssues = issues
+    .filter((issue) => issue.number >= 65)
+    .filter((issue) => {
+      if (!issue.notes) return true;
+      const key = `${issue.notes}|${issue.coverUrl}`;
+      if (seenCoverNotes.has(key)) return false;
+      seenCoverNotes.add(key);
+      return true;
+    });
+
   return (
     <div className="min-h-screen">
       <section className="bg-brand-gradient text-black py-16">
@@ -140,11 +67,9 @@ export default function LatestIssues() {
       <section className="py-16 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
-            {issues
-              .filter((issue) => issue.number >= 65)
-              .map((issue) => (
-                <IssueCard key={issue.number} issue={issue} />
-              ))}
+            {dedupedIssues.map((issue) => (
+              <IssueCard key={issue.number} issue={issue} />
+            ))}
           </div>
         </div>
       </section>
